@@ -25,13 +25,8 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+The following picture demonstrates the application:
 
 ![image](https://user-images.githubusercontent.com/83068010/203878497-892c5808-a2aa-4903-b604-8b3f9a058111.png)
-
-The following animation demonstrates the application functionality:
-
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
-
 
 * The URL of the deployed application - https://dariabatiuk.github.io/Work-day-Schedulle-Jquery/
