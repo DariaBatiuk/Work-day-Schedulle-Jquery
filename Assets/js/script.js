@@ -1,4 +1,7 @@
-//shows the current time
+// shows the current time
+
+// import dayjs library
+// import dayjs from "dayjs";
 
 let currentDate = dayjs().format("dddd, MMM D YYYY");
 $("#currentDay").html(currentDate);
@@ -14,11 +17,11 @@ $(document).ready(function () {
     let time = $(this).parent().attr("id");
     let text = $(this).siblings(".description").val();
 
-    //retrieve object from ls
+    // retrieve object from ls
     let taskObject = JSON.parse(localStorage.getItem("taskObject"));
-		console.log(taskObject);
+    console.log(taskObject);
 
-    //   we add/replace new/existing data in the object from LS
+    // we add/replace new/existing data in the object from LS
     const newObject = {
       ...taskObject,
       [time]: text,
@@ -27,51 +30,49 @@ $(document).ready(function () {
 
     // push the updated object back to LS
     localStorage.setItem("taskObject", JSON.stringify(newObject));
-		
   });
-	
-//getting data from LS and pushing this into textarea.value
-let hour9 = document.getElementById("h9");
-let hour10 = document.getElementById("h10");
-let hour11 = document.getElementById("h11");
-let hour12 = document.getElementById("h12");
-let hour13 = document.getElementById("h13");
-let hour14 = document.getElementById("h14");
-let hour15 = document.getElementById("h15");
-let hour16 = document.getElementById("h16");
-let hour17 = document.getElementById("h17");
 
-hour9.value = JSON.parse(localStorage.getItem("taskObject")).hour9;
-hour10.value = JSON.parse(localStorage.getItem("taskObject")).hour10;
-hour11.value = JSON.parse(localStorage.getItem("taskObject")).hour11;
-// if (localStorage.getItem("taskObject").hour10){
-// 	hour10.value = JSON.parse(localStorage.getItem("taskObject")).hour10;
-// }
-// if (localStorage.getItem("taskObject").hour11){
-// 	hour11.value = JSON.parse(localStorage.getItem("taskObject")).hour11;
-// }
-hour12.value = JSON.parse(localStorage.getItem("taskObject")).hour12;
-hour13.value = JSON.parse(localStorage.getItem("taskObject")).hour13;
-hour14.value = JSON.parse(localStorage.getItem("taskObject")).hour14;
-hour15.value = JSON.parse(localStorage.getItem("taskObject")).hour15;
-hour16.value = JSON.parse(localStorage.getItem("taskObject")).hour16;
-hour17.value = JSON.parse(localStorage.getItem("taskObject")).hour17;
+  // getting data from LS and pushing this into textarea.value
+  let hour9 = document.getElementById("h9");
+  let hour10 = document.getElementById("h10");
+  let hour11 = document.getElementById("h11");
+  let hour12 = document.getElementById("h12");
+  let hour13 = document.getElementById("h13");
+  let hour14 = document.getElementById("h14");
+  let hour15 = document.getElementById("h15");
+  let hour16 = document.getElementById("h16");
+  let hour17 = document.getElementById("h17");
 
-  // // for(let i=0; i<)
-	// for (let i=0; i < 8; i ++) { 
-	// 	$('#[i]').description('textarea').text(localStorage.getItem('[i]')); 
-	// }
-
-
-
-	// $(".time-block").each(function () {
-	// 	var stopTime = parseInt($(this).attr("id").split("hour")[1]);
-	// 	console.log(stopTime);
-		
-	// })
+  // check if property exists before accessing it
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour9")) {
+    hour9.value = JSON.parse(localStorage.getItem("taskObject")).hour9;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour10")) {
+    hour10.value = JSON.parse(localStorage.getItem("taskObject")).hour10;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour11")) {
+    hour11.value = JSON.parse(localStorage.getItem("taskObject")).hour11;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour12")) {
+    hour12.value = JSON.parse(localStorage.getItem("taskObject")).hour12;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour13")) {
+    hour13.value = JSON.parse(localStorage.getItem("taskObject")).hour13;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour14")) {
+    hour14.value = JSON.parse(localStorage.getItem("taskObject")).hour14;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour15")) {
+    hour15.value = JSON.parse(localStorage.getItem("taskObject")).hour15;
+  }
+  if (JSON.parse(localStorage.getItem("taskObject")).hasOwnProperty("hour16")) {
+    hour16.value = JSON.parse(localStorage.getItem("taskObject")).hour16;
+	}
+ 
 
 
-	  //function for changing the css style
+
+
   function changeStyle() {		
 		let timeBlocks = document.querySelectorAll(".time-block");
 		console.log(timeBlocks);
